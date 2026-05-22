@@ -44,7 +44,7 @@ function CountUpStat({ label, prefix, suffix, target }) {
 
   return (
     <div style={{ flex: 1, textAlign: 'center' }}>
-      <p style={{ color: '#F1F5F9', fontSize: '52px', fontWeight: 800, lineHeight: 1 }}>
+      <p style={{ color: '#F1F5F9', fontSize: '40px', fontWeight: 800, lineHeight: 1 }}>
         {prefix}
         {value.toLocaleString()}
         {suffix}
@@ -69,7 +69,7 @@ function CountUpStat({ label, prefix, suffix, target }) {
 function LobSelection() {
   return (
     <>
-      <section style={{ padding: '72px 0 56px', position: 'relative', textAlign: 'center', overflow: 'hidden' }}>
+      <section style={{ padding: '58px 0 44px', position: 'relative', textAlign: 'center', overflow: 'hidden' }}>
         <div
           aria-hidden="true"
           style={{
@@ -98,12 +98,12 @@ function LobSelection() {
               lineHeight: 1.6,
               padding: '4px 14px',
               borderRadius: '999px',
-              marginBottom: '20px',
+              marginBottom: '16px',
             }}
           >
             ✦ Trusted by 10,000+ customers
           </div>
-          <h1 style={{ color: '#F1F5F9', fontSize: '52px', fontWeight: 800, lineHeight: 1.15, marginBottom: '18px' }}>
+          <h1 style={{ color: '#F1F5F9', fontSize: '50px', fontWeight: 800, lineHeight: 1.15, marginBottom: '14px' }}>
             Compare insurance.
             <br />
             <span
@@ -116,7 +116,7 @@ function LobSelection() {
               Save more.
             </span>
           </h1>
-          <p style={{ color: '#94A3B8', fontSize: '15px', lineHeight: 1.6, maxWidth: '480px', margin: '0 auto 28px' }}>
+          <p style={{ color: '#94A3B8', fontSize: '15px', lineHeight: 1.6, maxWidth: '480px', margin: '0 auto 22px' }}>
             Upload your policy, compare trusted insurers, and choose smarter coverage without the usual paperwork drag.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '12px' }}>
@@ -126,10 +126,10 @@ function LobSelection() {
                 alignItems: 'center',
                 background: '#3B82F6',
                 border: '1px solid transparent',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 color: 'white',
                 display: 'flex',
-                fontSize: '14px',
+                fontSize: '13px',
                 fontWeight: 700,
                 height: '40px',
                 padding: '0 20px',
@@ -154,10 +154,10 @@ function LobSelection() {
                 background: 'rgba(13,31,60,0.55)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 color: '#F1F5F9',
                 display: 'flex',
-                fontSize: '14px',
+                fontSize: '13px',
                 fontWeight: 600,
                 height: '40px',
                 padding: '0 20px',
@@ -181,10 +181,10 @@ function LobSelection() {
 
       <section id="coverage-options" style={{ padding: '24px 0 48px' }}>
         <div style={wrapper}>
-          <h2 style={{ color: '#F1F5F9', fontSize: '32px', fontWeight: 800, lineHeight: 1.4, marginBottom: '24px', textAlign: 'center' }}>
+          <h2 style={{ color: '#F1F5F9', fontSize: '28px', fontWeight: 800, lineHeight: 1.4, marginBottom: '24px', textAlign: 'center' }}>
             Choose your coverage
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '16px', width: '100%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '15px', width: '100%' }}>
             {lobs.map((lob, index) => (
               <LobCard key={lob.slug} index={index} {...lob} />
             ))}

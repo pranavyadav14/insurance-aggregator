@@ -9,17 +9,21 @@ function QuoteCard({ bestValue, quote, index }) {
       style={{
         '--delay': `${index * 80}ms`,
         background: 'rgba(13,31,60,0.9)',
-        border: '1px solid rgba(255,255,255,0.08)',
+        border: bestValue ? '1px solid rgba(59,130,246,0.42)' : '1px solid rgba(255,255,255,0.08)',
         borderRadius: '20px',
         padding: '24px',
         position: 'relative',
         overflow: 'hidden',
         transition: 'all 0.25s ease',
+        transform: bestValue ? 'scale(1.012)' : 'scale(1)',
+        boxShadow: bestValue
+          ? '0 24px 56px rgba(0,0,0,0.32), 0 0 0 1px rgba(59,130,246,0.16), 0 0 34px rgba(59,130,246,0.08)'
+          : '0 10px 28px rgba(0,0,0,0.14)',
       }}
       onMouseEnter={(event) => {
         const button = event.currentTarget.querySelector('[data-select]')
         const arrow = event.currentTarget.querySelector('[data-button-arrow]')
-        event.currentTarget.style.transform = 'translateY(-4px)'
+        event.currentTarget.style.transform = bestValue ? 'translateY(-4px) scale(1.018)' : 'translateY(-4px)'
         event.currentTarget.style.borderColor = 'rgba(59,130,246,0.6)'
         event.currentTarget.style.boxShadow = '0 32px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(59,130,246,0.2), 0 0 40px rgba(59,130,246,0.08)'
         button.style.background = '#3B82F6'
@@ -32,9 +36,11 @@ function QuoteCard({ bestValue, quote, index }) {
       onMouseLeave={(event) => {
         const button = event.currentTarget.querySelector('[data-select]')
         const arrow = event.currentTarget.querySelector('[data-button-arrow]')
-        event.currentTarget.style.transform = 'translateY(0)'
-        event.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
-        event.currentTarget.style.boxShadow = 'none'
+        event.currentTarget.style.transform = bestValue ? 'scale(1.012)' : 'translateY(0)'
+        event.currentTarget.style.borderColor = bestValue ? 'rgba(59,130,246,0.42)' : 'rgba(255,255,255,0.08)'
+        event.currentTarget.style.boxShadow = bestValue
+          ? '0 24px 56px rgba(0,0,0,0.32), 0 0 0 1px rgba(59,130,246,0.16), 0 0 34px rgba(59,130,246,0.08)'
+          : '0 10px 28px rgba(0,0,0,0.14)'
         button.style.background = 'rgba(59,130,246,0.15)'
         button.style.color = '#60A5FA'
         button.style.boxShadow = 'none'
@@ -47,15 +53,15 @@ function QuoteCard({ bestValue, quote, index }) {
         <span
           style={{
             position: 'absolute',
-            top: '18px',
+            top: '15px',
             right: '18px',
             background: 'linear-gradient(135deg, #059669, #10B981)',
             borderRadius: '8px',
             color: 'white',
-            fontSize: '10px',
+            fontSize: '8px',
             fontWeight: 900,
             letterSpacing: '0.8px',
-            padding: '5px 9px',
+            padding: '4px 8px',
             boxShadow: '0 4px 12px rgba(16,185,129,0.3)',
             textTransform: 'uppercase',
           }}
@@ -73,17 +79,17 @@ function QuoteCard({ bestValue, quote, index }) {
             boxShadow: `0 0 0 3px ${logoColor}40`,
             color: 'white',
             display: 'flex',
-            fontSize: '13px',
+            fontSize: '12px',
             fontWeight: 900,
-            height: '48px',
+            height: '40px',
             justifyContent: 'center',
-            width: '48px',
+            width: '40px',
           }}
         >
           {initials}
         </div>
         <div>
-          <h3 style={{ color: '#F1F5F9', fontSize: '18px', fontWeight: 700, lineHeight: 1.4 }}>
+          <h3 style={{ color: '#F1F5F9', fontSize: '15px', fontWeight: 700, lineHeight: 1.4 }}>
             {company}
           </h3>
           <div style={{ display: 'flex', gap: '3px', marginTop: '4px' }}>
@@ -101,16 +107,16 @@ function QuoteCard({ bestValue, quote, index }) {
 
       <div style={{ alignItems: 'flex-end', display: 'flex', justifyContent: 'space-between' }}>
         <div>
-          <p style={{ color: '#64748B', fontSize: '11px', fontWeight: 700, letterSpacing: '1.2px', marginBottom: '5px', textTransform: 'uppercase' }}>
+          <p style={{ color: '#64748B', fontSize: '9px', fontWeight: 700, letterSpacing: '1.2px', marginBottom: '5px', textTransform: 'uppercase' }}>
             Monthly premium
           </p>
           <div style={{ alignItems: 'baseline', display: 'flex', gap: '4px' }}>
-            <span style={{ color: '#F1F5F9', fontSize: '38px', fontWeight: 900, lineHeight: 1 }}>${price}</span>
+            <span style={{ color: '#F1F5F9', fontSize: '28px', fontWeight: 600, lineHeight: 1 }}>${price}</span>
             <span style={{ color: '#64748B', fontSize: '14px', fontWeight: 500 }}>/mo</span>
           </div>
         </div>
         <div style={{ textAlign: 'right' }}>
-          <p style={{ color: '#64748B', fontSize: '11px', fontWeight: 700, letterSpacing: '1.2px', marginBottom: '5px', textTransform: 'uppercase' }}>
+          <p style={{ color: '#64748B', fontSize: '10px', fontWeight: 700, letterSpacing: '1.2px', marginBottom: '5px', textTransform: 'uppercase' }}>
             Coverage
           </p>
           <p style={{ color: '#F1F5F9', fontSize: '14px', fontWeight: 700 }}>$100,000</p>
@@ -138,7 +144,7 @@ function QuoteCard({ bestValue, quote, index }) {
           color: '#60A5FA',
           cursor: 'pointer',
           display: 'flex',
-          fontSize: '14px',
+          fontSize: '13px',
           fontWeight: 600,
           height: '44px',
           justifyContent: 'center',

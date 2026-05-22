@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { CheckCircle2, FileUp, Loader2 } from 'lucide-react'
+import { CheckCircle2, FileUp, Loader2, PhoneOff, ShieldCheck, Timer } from 'lucide-react'
 
 const lobLabels = {
   auto: 'Auto Insurance',
@@ -15,6 +15,12 @@ const steps = [
   ['1', 'Upload', 'Add your current policy document.'],
   ['2', 'Analyze', 'We review limits and savings signals.'],
   ['3', 'Compare', 'See personalized insurer matches.'],
+]
+
+const trustIndicators = [
+  ['Secure & encrypted', ShieldCheck],
+  ['No spam calls', PhoneOff],
+  ['Takes less than 30 seconds', Timer],
 ]
 
 function DocumentUpload() {
@@ -40,12 +46,12 @@ function DocumentUpload() {
 
   return (
     <>
-      <main className="animate-fade-up" style={{ maxWidth: '920px', margin: '0 auto', padding: '48px 32px 32px', textAlign: 'center' }}>
-        <div style={{ color: '#475569', fontSize: '12px', lineHeight: 1.6, marginBottom: '18px' }}>
+      <main className="animate-fade-up" style={{ maxWidth: '920px', margin: '0 auto', padding: '40px 32px 28px', textAlign: 'center' }}>
+        {/* <div style={{ color: '#475569', fontSize: '12px', lineHeight: 1.6, marginBottom: '14px' }}>
           <Link to="/" style={{ color: '#475569', textDecoration: 'none' }}>Home</Link>
           <span style={{ margin: '0 6px' }}>/</span>
           <span>{lobName}</span>
-        </div>
+        </div> */}
 
         <div
           style={{
@@ -59,12 +65,12 @@ function DocumentUpload() {
             lineHeight: 1.6,
             padding: '4px 14px',
             borderRadius: '999px',
-            marginBottom: '14px',
+            marginBottom: '12px',
           }}
         >
           Policy document analysis
         </div>
-        <h1 style={{ color: '#F1F5F9', fontSize: '38px', fontWeight: 800, lineHeight: 1.25, marginBottom: '10px' }}>
+        <h1 style={{ color: '#F1F5F9', fontSize: '32px', fontWeight: 800, lineHeight: 1.25, marginBottom: '8px' }}>
           Upload your{' '}
           <span
             style={{
@@ -76,7 +82,7 @@ function DocumentUpload() {
             {lobName}
           </span>
         </h1>
-        <p style={{ color: '#64748B', fontSize: '14px', lineHeight: 1.6, marginBottom: '24px' }}>
+        <p style={{ color: '#64748B', fontSize: '14px', lineHeight: 1.6, marginBottom: '20px' }}>
           Upload your current policy and we will prepare comparable quotes for review.
         </p>
 
@@ -134,7 +140,7 @@ function DocumentUpload() {
           >
             <FileUp size={28} color="#3B82F6" />
           </span>
-          <span style={{ color: '#F1F5F9', fontSize: '15px', fontWeight: 700, lineHeight: 1.4, marginBottom: '6px' }}>
+          <span style={{ color: '#F1F5F9', fontSize: '14px', fontWeight: 700, lineHeight: 1.4, marginBottom: '6px' }}>
             Drop your policy PDF or <span style={{ color: '#3B82F6', textDecoration: 'underline' }}>Browse</span>
           </span>
           <span style={{ color: '#64748B', fontSize: '13px', lineHeight: 1.6 }}>PDF files accepted</span>
@@ -168,6 +174,18 @@ function DocumentUpload() {
           />
         </label>
 
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '8px',
+            flexWrap: 'wrap',
+            marginTop: '6px',
+          }}
+        >
+         
+        </div>
+
         <button
           className={isLoading ? 'loading-shimmer' : ''}
           disabled={isLoading}
@@ -182,7 +200,7 @@ function DocumentUpload() {
             color: 'white',
             cursor: isLoading ? 'wait' : 'pointer',
             display: 'flex',
-            fontSize: '15px',
+            fontSize: '14px',
             fontWeight: 700,
             gap: '8px',
             height: '48px',
@@ -209,8 +227,8 @@ function DocumentUpload() {
       </main>
 
       <section style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px 64px' }}>
-        <div style={{ margin: '48px auto 0', maxWidth: '840px', textAlign: 'center' }}>
-          <h2 style={{ color: '#F1F5F9', fontSize: '32px', fontWeight: 800, lineHeight: 1.4, marginBottom: '24px' }}>
+        <div style={{ margin: '40px auto 0', maxWidth: '840px', textAlign: 'center' }}>
+          <h2 style={{ color: '#F1F5F9', fontSize: '26px', fontWeight: 800, lineHeight: 1.4, marginBottom: '20px' }}>
             How it works
           </h2>
           <div style={{ display: 'flex', gap: '32px', justifyContent: 'center', position: 'relative' }}>
@@ -244,7 +262,7 @@ function DocumentUpload() {
                 >
                   {number}
                 </div>
-                <h3 style={{ color: '#F1F5F9', fontSize: '15px', fontWeight: 700, lineHeight: 1.4, marginBottom: '4px' }}>
+                <h3 style={{ color: '#F1F5F9', fontSize: '13px', fontWeight: 700, lineHeight: 1.4, marginBottom: '4px' }}>
                   {title}
                 </h3>
                 <p style={{ color: '#64748B', fontSize: '13px', lineHeight: 1.6 }}>

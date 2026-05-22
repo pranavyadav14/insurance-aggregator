@@ -34,7 +34,7 @@ function QuoteResults() {
 
   return (
     <>
-      <header className="animate-fade-up" style={{ ...wrapper, paddingTop: '48px', paddingBottom: '22px' }}>
+      <header className="animate-fade-up" style={{ ...wrapper, paddingTop: '40px', paddingBottom: '20px' }}>
         <div
           style={{
             display: 'inline-flex',
@@ -42,24 +42,24 @@ function QuoteResults() {
             border: '1px solid rgba(59,130,246,0.35)',
             background: 'rgba(59,130,246,0.08)',
             color: '#60A5FA',
-            fontSize: '11px',
+            fontSize: '10px',
             fontWeight: 700,
             lineHeight: 1.6,
             padding: '4px 14px',
             borderRadius: '999px',
-            marginBottom: '14px',
+            marginBottom: '12px',
             textTransform: 'uppercase',
           }}
         >
           Quotes for {selectedLob}
         </div>
-        <h1 style={{ color: '#F1F5F9', fontSize: '38px', fontWeight: 800, lineHeight: 1.25, marginBottom: '8px' }}>
+        <h1 style={{ color: '#F1F5F9', fontSize: '28px', fontWeight: 800, lineHeight: 1.25, marginBottom: '8px' }}>
           We found 6 quotes for you
         </h1>
-        <p style={{ color: '#64748B', fontSize: '14px', lineHeight: 1.6, marginBottom: '18px' }}>
+        <p style={{ color: '#64748B', fontSize: '13px', lineHeight: 1.6, marginBottom: '16px' }}>
           Compare personalized offers from leading insurers and select the best fit.
         </p>
-        <div
+        {/* <div
           style={{
             alignItems: 'center',
             background: 'rgba(16,185,129,0.07)',
@@ -76,7 +76,7 @@ function QuoteResults() {
           }}
         >
           ⚡ Switching to Progressive could save you $43/month.
-        </div>
+        </div> */}
       </header>
 
       <section style={{ ...wrapper, paddingBottom: '18px' }}>
@@ -116,7 +116,7 @@ function QuoteResults() {
       </section>
 
       <section style={{ ...wrapper, paddingBottom: '64px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '16px', width: '100%' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '10px', width: '100%' }}>
           {visibleQuotes.map((quote, index) => (
             <QuoteCard
               bestValue={quote[3] === cheapestPrice}

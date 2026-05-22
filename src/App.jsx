@@ -24,8 +24,8 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Breadcrumb />
-      <div className="relative min-h-screen overflow-hidden bg-[#0A1628] text-white">
-        <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:72px_72px] opacity-30" aria-hidden="true" />
+      <div className="relative min-h-screen overflow-hidden bg-[#060E1E] text-white">
+        <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:72px_72px] opacity-15" aria-hidden="true" />
         
         <AnimatedRoutes />
       </div>

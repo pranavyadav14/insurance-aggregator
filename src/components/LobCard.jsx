@@ -5,6 +5,7 @@ function LobCard({ description, icon: Icon, index = 0, slug, title }) {
   return (
     <Link
       className="animate-fade-up shimmer-card"
+      data-lob={slug}
       style={{
         '--delay': `${index * 60}ms`,
         minHeight: '170px',
